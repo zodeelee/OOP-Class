@@ -52,7 +52,8 @@ while True:
     elif option == "4":
         print("------------------------------") #linebreaker
         sd = print("All the current students in the dictionary")
-        print(myStudents)
+        for sid, info in myStudents.items():
+            print("ID:", sid, "Info:", info)
         print("------------------------------") #linebreaker
     elif option == "5":
         print("You have stopped the program")
