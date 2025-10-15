@@ -1,4 +1,5 @@
 import pickle
+
 class Product:
     def __init__(self):
         self.pid = ""
@@ -23,15 +24,15 @@ class Product:
 
 while 1:
     print("<----------------------------------------------------------->\n"
-          "1. show a menu to create a  product object\n",
+          "1. show a menu to create a product object\n",
           "2. get info for the product\n",
           "3. display the product\n",
           "4. write the product into a file\n",
           "5. read from the file\n",
           "6. Exit\n"
           "<----------------------------------------------------------->\n")
+    option = input("{Enter your option}:")
 
-    option = input("Enter your option:")
     product_obj = Product() #option == 1
 
     product_obj.get_product_details() #option == 2
@@ -43,4 +44,12 @@ while 1:
         pickle.dump(product_obj, f1)
         f1.close()
 
+    if option == 5:
+        f2 = open("product_inventory.dat", "rb")
+        while 1:
+            try:
+                data = pickle.load(f2)
+                data.display_product_info()
+            except EOFError:
+                break
 #<><><><><>><><><><><<><><><><><<><><><><><><><>><><><><><<><><><><><<><>
