@@ -8,10 +8,10 @@ class Customer:
         self.balance = int(input("Enter the account balance:"))
 
     def debit_from(self, amt):
-        self.balance -= amt
+        self.balance -= input("amt:")
 
     def credit_to(self, amt):
-        self.balance += amt
+        self.balance += input("amt:")
 
     def display(self):
         print("\n[Customer ID]:", self.cid,
@@ -37,3 +37,5 @@ while 1:
     c2 = Customer()
 
     c1.display()
+    c2.display()
+
